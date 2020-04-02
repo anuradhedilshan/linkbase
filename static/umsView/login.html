@@ -1,0 +1,60 @@
+<!-- sign in -->
+<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered animationZoom" role="document">
+
+  <div class="alert alert-success alert-dismissible  fade show" id="alertBox" role="alert">
+  </div> <!-- alert -->
+  <div class="modal-content">
+    <div class="modal-header bg-success">
+      <h5 class="modal-title" id="exampleModalCenterTitle">Log In</h5>
+      <button type="button" onclick="changeView.close(); " class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+
+      <form class="needs-validation" name="logInForm" id="logInForm">
+
+        <div class="form-group">
+          <label for="username">UserName</label>
+          <input type="text" class="form-control" id="uname" min="2" minlength="2"  required placeholder="UserName ex-Anuradhe ">
+          <div class="invalid-feedback">
+            UserName is Required_ can use email or firstname
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password </label>
+          <input type="password" class="form-control" id="password" min="2" minlength="2" required autocomplete="new-password"
+            placeholder="Password">
+          <div class="invalid-feedback">
+            password is Required for Login
+          </div>
+        </div>
+
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="stayLogin">
+          <label class="form-check-label" for="exampleCheck1">Stay in Login</label>
+        </div>
+
+
+
+
+
+        <button type="button" onclick="new submitForm(logInForm,'login')" class="btn btn-primary">Login</button>
+
+
+
+      </form>
+
+
+
+    </div><!-- modal body -->
+    <div class="modal-footer ">
+      <h5 style="position: absolute;left:10px" class="modal-title">Social login</h5>
+      <div class="button-group">
+        <button type="button" class="btn rounded-circle btn-primary"><i class="fab fa-facebook-square"></i></button>
+        <button type="button" class="btn rounded-circle btn-danger"><i class="fab fa-google"></i></button>
+      </div>
+
+    </div>
+  </div>

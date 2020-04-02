@@ -1,0 +1,201 @@
+<a href="/" class="list-group-item list-group-item-action bg-warning" style="margin-bottom: 10px; width: 100%;">
+  <h6>New Updates <span class="badge badge-danger">New 10</span></h6>
+</a>
+<div class="heroBox shadow-lg  rounded-lg" onmousemove="slider(this)">
+  <div class="deck select">
+    {% for i in des %}
+    <div class="card hero" style="width:320px;min-height:316px;">
+      <img src="{{i.1}}" style="height: 200px;width: 100%;" alt="..." class="img-thumbnail" />
+      <div class="card-body" style="display: block;">
+        <h5 class="card-title">{{i.2}}</h5>
+        <p class="card-text" style="height: 48px;">{{i.0}}</p>
+
+        <a href="/view?id={{i.3}}" target="blank" style="" class="btn btn-primary mt-2">Go somewhere</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <!-- row -->
+</div>
+<!--end hero card box -->
+
+
+
+
+
+<br /><br />
+
+<div class="fonts mb-2">
+  <a href="/fonts" class="list-group-item list-group-item-action bg-info" style="margin-bottom: 10px; width: 100%;">
+    <b>Fonts</b>
+  </a>
+  <div class="list-group col-12 col-lg-8" style="float: left; border-radius: 30px;">
+    <a href="http://www.sinhalafonts.org/d/13091/iskoola_potha_unicode.zip"
+      class="list-group-item list-group-item-action">FM Abaya</a>
+    <a href="http://www.sinhalafonts.org/d/13083/fm___malithi.zip" class="list-group-item list-group-item-action">FM
+      Malithi </a>
+    <a href="http://www.sinhalafonts.org/d/13138/sara_gune.zip"
+      class="list-group-item list-group-item-action">SARA-GUNE</a>
+    <a href="http://www.sinhalafonts.org/d/13130/fn_wijeya.zip" class="list-group-item list-group-item-action ">FN
+      WIJEYA</a>
+    <a href="http://www.sinhalafonts.org/d/13082/fm___samantha_x.zip" class="list-group-item list-group-item-action">FM
+      Samantha</a>
+    <a href="#" class="list-group-item list-group-item-action bg-white"><u>More</u></a>
+    <small>Copy Right By <u>http://www.sinhalafonts.org</u></small>
+  </div>
+  <img class="m-image col-lg-4 " src="static/images/fonts.jpg"
+    style="float: right; width: 500px;height: 343px; border-radius: 30px;" />
+  <div class="jumbotron mt-5">
+    <h1 class="display-4" style="font-family:'Spicy Rice', cursive;">Hello, world!</h1>
+    <p class="lead" style="font-family: 'Indie Flower', cursive;
+    ">Making the web more beautiful, fast, and open through great typography
+    </p>
+    <hr class="my-4">
+    <p style="font-family: 'Liu Jian Mao Cao', cursive; font-size: large;">It uses utility classes for typography and
+      spacing to space content out within the larger container.</p>
+    <a class="btn btn-primary btn-lg" href="#" role="button">Get Google Font</a>
+  </div>
+</div>
+<!--end fonts-->
+
+<div class="row mt-3 p-1">
+
+  <h1>Films</h1>
+  <div class="card-deck films" style="width: 100%;">
+    {% for i in films %}
+    
+    <div class="card select" style="cursor: alias;" onclick="window.open('/view?id={{i.pk}}')">
+      <img src="{{i.image.url}}" class="card-img-top" height="300px">
+      <div class="card-body">
+        <h5 class="card-title">{{i.title}}</h5>
+        <p class="card-text" style="height: 70px;">{{i.quickdes}}</p>
+        <p class="card-text"><small class="text-muted">adeed by {{i.username_id}}</small></p>
+      </div>
+    </div>
+    
+    {% endfor%}
+  </div>
+  <a href="/tf?para=films">
+  <button type="button" class="btn btn-dark mt-1">See More</button>
+  </a>
+
+</div>
+<!-- end films -->
+
+<div class="row mt-3 p-1">
+  <h1>Tv Seris</h1>
+  <div class="card-deck films">
+    {% for i in tv %}
+ 
+    <div class="card select" onclick="window.open('/view?id={{i.pk}}')">
+      <img src="{{i.image.url}}" class="card-img-top" height="300px">
+      <div class="card-body">
+        <h5 class="card-title">{{i.title}}</h5>
+        <p class="card-text">{{i.quickdes}}</p>
+        <p class="card-text"><small class="text-muted">Added By {{i.user}}</small></p>
+      </div>
+    </div>
+  
+    {% endfor%}
+  </div>
+  <a href="/tf?para=tv">
+  <button type="button" class="btn btn-dark mt-1" ;>See More</button>
+  </a>
+</div>
+<!-- end films -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="card text-center mt-3">
+  <div class="card-header">
+    Ads
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">For Ads</h5>
+    <p class="card-text">Ads</p>
+    <a href="#" class="btn btn-primary">Ads</a>
+  </div>
+  <div class="card-footer text-muted">
+    2 days ago
+  </div>
+</div>
+
+<!-- end  -->
+
+
+
+<div class="apps row mt-3 justify-content-center">
+
+  <div class="col-12 col-lg-4 mod mb-3">
+    <a href="/sw?para=mod" class="list-group-item list-group-item-action bg-info" style="margin-bottom: 10px; width: 100%;">
+      <b>Mod Apps</b>
+    </a>
+    {% for i in mod %}
+    
+      <div class="card select mb-2" style="width: 100%;height: 158px; display: flex; flex-direction: row;"onclick="window.open('/view?id={{i.pk}}')">
+        <img src="{{i.image.url}}" style="flex: 1; width: 40%;" alt="">
+        <div class="card-body" style="flex: 2 auto; width: 60%;">
+          <h5>{{i.title}}</h5>
+          <p>{{i.quickdes}}</p>
+        </div>
+      </div>
+
+    
+
+
+    {% endfor %}
+    <a href="/sw?para=mod"> <button type="button" class="btn btn-dark ">See More</button></a>
+  </div><!-- end mod -->
+
+  <div class="col-12 col-lg-4 pro mb-3">
+    <a href="/fonts" class="list-group-item list-group-item-action bg-info" style="margin-bottom: 10px; width: 100%;">
+      <b>Pro Apps</b>
+    </a>
+    {% for i in pro %}
+
+      <div class="card select mb-2" style="width: 100%; height: 158px; display: flex; flex-direction: row;"onclick="window.open('/view?id={{i.pk}}')">
+        <img src="{{i.image.url}}" style="flex: 1; width: 40%;" alt="">
+        <div class="card-body" style="flex: 2;">
+          <h5>{{i.title}}</h5>
+          <p style="height: 70px;">{{i.quickdes}}</p>
+        </div>
+      </div>
+    
+    {% endfor %}
+    <a href="/sw?para=pro"><button type="button" class="btn btn-dark ">See More</button></a>
+  </div>
+  <!-- end pro -->
+
+  <div class="col-12 col-lg-4 softwear mb-3">
+    <a href="/sw?para=sof" class="list-group-item list-group-item-action bg-info"
+      style="margin-bottom: 10px; width: 100%;">
+      <b> Softwears</b>
+    </a>
+    {% for i in sof %}
+    
+      <div class="card mb-2 select" style="width: 100%; height: 158px; display: flex; flex-direction: row;" onclick="window.open('/view?id={{i.pk}}')">
+        <img src="{{i.image.url}}" style="flex: 1; width: 40%;" alt="">
+        <div class="card-body" style="flex: 2;">
+          <h5>{{i.title}}</h5>
+          <p style="height: 70px; width: 100%;word-spacing: initial;">{{i.quickdes}}</p>
+        </div>
+      </div>
+  
+    {% endfor %}
+    <a href="/sw?para=sof"> <button type="button" class="btn btn-dark ">See More</button></a>
+  </div>
+  <!-- end softwear -->
+
+</div><!-- end app -->

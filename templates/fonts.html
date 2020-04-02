@@ -1,0 +1,58 @@
+{% extends "layout.html"%} {% block content %}
+
+<div class="list-group">
+
+  <a href="#" class="list-group-item list-group-item-action active">Fonts</a>
+  <div class="list-group-item " style="width: 100%; display: flex; flex-direction: row; text-align: left;">
+    <h5> FM Abaya</h5>
+    <div style="margin:auto;align-self: center;width: 226px;overflow: hidden;">
+      <img src="static/images/font/1.gif" width="250px" height="54px" />
+    </div> <a href="http://www.sinhalafonts.org/d/13072/fm___ababld___bold.zip" class="float-right"
+      style=" justify-content: space-around; align-self: center; margin-left: 10px;"><span
+        class="material-icons">get_app</span></a>
+  </div>
+
+  <div class="list-group-item " style="width: 100%; display: flex; flex-direction: row; text-align: left;">
+    <h5> Iskoola Potha UniCode</h5>
+    <div style="margin:auto;align-self: center;width: 226px;overflow: hidden;">
+      <img src="static/images/font/1.gif" width="250px" height="54px" />
+    </div>
+    <a href="http://www.sinhalafonts.org/d/13091/iskoola_potha_unicode.zip" class="float-right"
+      style=" justify-content: space-around; align-self: center; margin-left: 10px;"><span
+        class="material-icons">get_app</span></a>
+  </div>
+
+  <div class="list-group-item " style="width: 100%; display: flex; flex-direction: row; text-align: left;">
+    <h5> Malithi</h5>
+    <div style="margin:auto;align-self: center;width: 226px;overflow: hidden;">
+      <img src="static/images/font/1.gif" width="250px" height="54px" />
+    </div>
+    <a href="http://www.sinhalafonts.org/d/13083/fm___malithi.zip" class="float-right"
+      style=" justify-content: space-around; align-self: center; margin-left: 10px;"><span
+        class="material-icons">get_app</span></a>
+  </div>
+
+  <div class="list-group-item " style="width: 100%; display: flex; flex-direction: row; text-align: left;">
+    <h5> FM Wijaya</h5>
+    <div style="margin:auto;align-self: center;width: 226px;overflow: hidden;">
+      <img src="static/images/font/1.gif" width="250px" height="54px" />
+    </div>
+    <a href="http://www.sinhalafonts.org/d/13130/fn_wijeya.zip" class="float-right"
+      style=" justify-content: space-around; align-self: center; margin-left: 10px;"><span
+        class="material-icons">get_app</span></a>
+  </div>
+
+  {% for i in data %}
+  <div class="list-group-item " style="width: 100%; display: flex; flex-direction: row; text-align: left;">
+    <h5>{{i.title}}</h5>
+    <div style="margin:auto;align-self: center;width: 226px;overflow: hidden;">
+      <img src="{{i.image}}" width="250px" height="54px" />
+    </div>
+    <a href="{{i.url}}" class="float-right"
+      style=" justify-content: space-around; align-self: center; margin-left: 10px;"><span
+        class="material-icons">get_app</span></a>
+  </div>
+  {%endfor %}
+
+</div>
+{% endblock %}

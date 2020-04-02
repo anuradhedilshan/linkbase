@@ -1,0 +1,88 @@
+<!-- sign  in  -->
+<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered animationZoom" role="document">
+  <div class="alert  alert-dismissible  fade show" id="alertBox" role="alert">
+
+  </div> <!-- alert -->
+
+  <div class="modal-content">
+    <div class="modal-header bg-info">
+      <h5 class="modal-title" id="exampleModalCenterTitle">Sign In</h5>
+      <button type="button" onclick="changeView.close(); " class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <!-- place -->
+
+      <form   class="needs-validation"   name="signinForm"  id="signinForm">
+
+        <div class="form-row">
+
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">First Name</label>
+            <input type="text" class="form-control" id="first_name" minlength="2" maxlength="8" placeholder="First Name" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="form-group col-md-5 ">
+            <label for="inputPassword4">Last Name</label>
+            <input type="text" class="form-control" id="last_name" minlength="2" maxlength="8"  placeholder="last Name" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress">Email Address</label>
+          <input type="text" class="form-control" id="email" minlength="5" maxlength="50" placeholder="Email Adress" required>
+          <div class="invalid-feedback">
+            Email is Required Use Valid Email
+          </div>
+    
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="text" class="form-control" id="password" placeholder="password" minlength="8" maxlength="20" required>
+          <div class="invalid-feedback">
+            Please choose a stronge Password 8 char
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputCity">Confirm Password</label>
+          <input type="text" placeholder="confirm password " class="form-control"  min="8" maxlength="20" id="password2" required>
+        </div>
+
+
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input " type="checkbox" value="True" id="check" required>
+            <label class="form-check-label" for="check">
+              Agree to terms and conditions
+            </label>
+
+
+          </div>
+
+        </div>
+        <button type="button" onclick="new submitForm(signinForm,'signin')" class="btn btn-primary">Sign In</button>
+        <button type="button" class="btn btn-secondary" onclick="signinForm.reset()">Clear</button>
+
+      </form>
+
+
+    </div>
+    <div class="modal-footer ">
+      <h5 style="position: absolute;left:10px" class="modal-title">Social login</h5>
+      <div class="button-group">
+        <button type="button" class="btn rounded-circle btn-primary"><i class="fab fa-facebook-square"></i></button>
+        <button type="button" class="btn rounded-circle btn-danger"><i class="fab fa-google"></i></button>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+

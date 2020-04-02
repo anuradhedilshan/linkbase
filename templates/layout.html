@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+  <link rel="stylesheet" type="text/css" href="static/css/main.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+  <script defer src="static/js/main.js"></script>
+
+  <title>Document</title>
+</head>
+
+<body>
+  <header>
+    <nav class="  navbar navbar-expand-lg navbar-light bg-dark py-1 navbar-fixed-top fixed-top ">
+      <a class=" navbar-brand " href="#">
+        <img class="" src="static/images/1.jpg" width="30" height="30" alt="" />
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse  justify-content-center align-self-center " id="navbarNav">
+        <a class="nav-link active btn-outline-primary " href="/">Home</a>
+        <a class="nav-link" href="/tf?para=films">Films</a>
+        <a class="nav-link" href="/tf?para=tv">TV serious</a>
+        <div class="dropdown">
+          <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Others
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="/sw?para=pro">Apps</a>
+            <a class="dropdown-item" href="/sw?para=sof">Softwears</a>
+            <a class="dropdown-item" href="/sw?para=pro">Mod Apps</a>
+          </div>
+        </div>
+        <a class="nav-link btn-outline-secondary" href="https://www.facebook.com/anuradha.dilshan.7" tabindex="-1">About Us</a>
+        <div class="form-inline my-1 form-row mx-md-5">
+          <input class="form-control mr-sm-2 col-8 col-lg"  type="text" onclick="removeSearch(this)" onchange="search(this.value)" id="searchIn" placeholder="Search"
+            aria-label="Search" />
+          <button class="btn btn-outline-info col-3 col-lg my-2  mx-2 " type="button" onclick="search(document.getElementById('searchIn').value)">
+            <i class="material-icons"> </i>search
+          </button>
+          <ul class="list-group position-absolute searchResult" id="searchResult"
+            style=" width:256px; z-index: 9999999;">
+            <button type="button" class="close float-right" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            
+          </ul>
+        </div>
+
+
+
+
+        <div class="btn-group" role="group" aria-label="Button group">
+          {% if isLoged %}
+          <button type="button" id="requestBtn" onclick="new changeView(this)" role="request" class="btn btn-info ">
+            Request Link
+          </button>
+          {% else %}
+          <button type="button" id="requestBtn" disabled role="request" class="btn btn-info ">
+            Request Link
+          </button>
+          {% endif %}
+          <button type="button" id="loginBtn" onclick="new changeView(this)" role="signUp" class="btn btn-success ml-1">
+            Log In
+          </button>
+          <button type="button" onclick="new changeView(this)" role="signIn" class="btn btn-outline-warning ml-1">
+            Sign Up
+          </button>
+          <button type="button" role="admin" class=" btn btn-light ml-1" data-toggle="tooltip" data-placement="top"
+            title="This will be Only staf ">
+            <a href="./admin" target="blank">
+              <span class="material-icons">
+                account_circle
+              </span>
+            </a>
+          </button>
+        </div>
+      </div>
+      <!-- collapase -->
+    </nav>
+  </header>
+  <!------------------------------------------------------------header End-------------------------------------------------------------------------------- -->
+
+  <br />
+  <div class="container pt-5 mt-3 ">
+    {% block content %} {% endblock %}
+  </div>
+  <!-- containner   -->
+
+  <div id="modalBox" class="modal " role="document" tabindex="-1"></div>
+  {% if isLoged %}
+  <input type="text" id="idIs" value="{{isLoged}}" />
+  {% endif %}
+
+
+
+
+<footer class="footer" style="clear: both; position: relative; bottom: 0;">
+
+<p style="color: white;">Copyright © |  Ict24.lk | 2020 All rights reserved.</p>
+
+  <address style="color: chartreuse;">anuradhedilshan@gmail.com | +94-77-9843032</address>
+  <h1 style="color:wheat">:)</h1>
+
+</footer>
+  
+</body>
+
+</html>
