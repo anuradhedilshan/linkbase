@@ -1,0 +1,1 @@
+web: gunicorn linkBase.wsgi --log-file -

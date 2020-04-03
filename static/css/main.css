@@ -1,0 +1,187 @@
+@import url("./bootstrap.css");
+/* include bootstrap */
+@import url('./view.css');
+/* include view.css*/
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Liu+Jian+Mao+Cao|Spicy+Rice&display=swap');
+/* include fonts */
+a{
+  text-decoration: none;
+  
+}
+.container{
+  padding-bottom: 100px;
+  min-height: 80vh;
+}
+.searchResult{
+  top: 55px;
+  display: none;
+}
+.heroBox {
+  padding: 10px;
+  border-radius: 60%;
+  width: 100%;
+  height: 400px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  cursor: grab;
+  user-select: none;
+}
+
+.card{
+overflow-wrap: break-word;
+overflow: hidden;
+width: 100%;
+box-sizing: border-box;
+
+}
+.card .card-body p {
+  overflow: hidden;
+
+}
+.select{
+  transform: scale(0.98);
+}
+.select:hover{
+  transform: scale(1);
+}
+
+
+div.heroBox::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+div.heroBox::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+div.heroBox::-webkit-scrollbar-thumb {
+  background: #888;
+  height: 10px;
+}
+
+/* Handle on hover */
+div.heroBox::-webkit-scrollbar-thumb:hover {
+  background: rgb(114, 241, 9);
+}
+.hero{
+  display:inline-block;
+}
+.deck{
+  width: max-content;
+  height: 400px;
+  display:flexbox;
+  overflow:hidden ;
+}
+div.heroBox::after {
+  content: url('../images/scroll.gif');
+  position: absolute;
+  width: 100%;
+  margin: auto;
+  display: none;
+  transform: scale(0.4) translateY(-70%);
+
+
+}
+
+#modalBox {
+
+  background-color: #212529cf;
+
+}
+
+#ver {
+  transition: all ease-out 2s;
+
+
+}
+
+/* animations */
+.animationZoom {
+  animation: zoom 0.4s ease-in;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes alert {
+  from {
+    top: -40%;
+  }
+
+  to {
+    top: 10%;
+  }
+}
+
+/* animations */
+
+[role="alert"] {
+  position: absolute;
+  z-index: 999999;
+  top: -50%;
+  display: none;
+  animation: alert;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+
+}
+
+
+
+
+
+.social {
+  background-color: #212529cf;
+  float: left;
+}
+
+
+
+.font {
+  width: 100%;
+  height: 300px;
+}
+/* footer */
+.footer{
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  padding: 10px;
+  margin-top: -10px;
+  text-align: center;
+
+  background-color: var(--dark);
+}
+
+
+
+@media (max-width: 900px) {
+
+  .searchResult{
+    top: 300px;
+  }
+
+
+  .heroBox .row {
+    overflow-x: auto;
+    height: 370px;
+  }
+
+
+
+  .m-image {
+    display: none;
+  }
+
+
+}

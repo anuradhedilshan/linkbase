@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+
+
+{% block content  %}
+
+<form class="input-group " style="width:40%">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="addon-wrapping">@</span>
+  </div>
+  <input type="text" class="form-control" placeholder="Filter" aria-label="Username" aria-describedby="addon-wrapping">
+</form>
+{% autoescape off %}
+{{title}}
+{% endautoescape %}
+<hr>
+<div class="card-columns films" style=" overflow-wrap: break-word;">
+  {% for i in data %}
+  <div class="card select">
+    <img src="{{i.image}}" class="card-img-top" height="300px">
+    <div class="card-body">
+      <h5 class="card-title">{{i.title}}</h5>
+      <p class="card-text" style="height: 70px;">{{i.quickdes}}</p>
+      <a style="cursor: alias;" href="/view?id={{i.pk}}">
+        <button type="button" class="btn btn-primary">See More</button>
+      </a>
+
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Added By {{i.username_id}}</small>
+    </div>
+  </div>
+  {% endfor%}
+</div>
+
+</div>
+
+
+
+
+
+
+
+<!-- pagination -->
+
+  {% if data.has_other_pages %}
+  <center>
+    <nav aria-label="..." style="width: fit-content;">
+  <ul class="pagination mb-4" >
+    {% if data.has_previous %}
+    <li class="page-item ">
+      <a class="page-link" href="/tf?para={{para}}&page={{ users.previous_page_number }}" tabindex="-1">Previous</a>
+    </li>
+    {% else %}
+    <li class="page-item disabled">
+      <a class="page-link" href="/tf?para={{para}}&page={{ users.previous_page_number }}" tabindex="-1">Previous</a>
+    </li>
+    {% endif %}
+
+    {% for i in data.paginator.page_range %}
+    {% if data.number == i %}
+    <li class="page-item active">
+      <a class="page-link">{{i}} <span class="sr-only">(current)</span></a>
+    </li>
+    {% else %}
+    <li class="page-item"><a class="page-link" href="/tf?para={{para}}&page={{ i }}">{{i}}</a></li>
+    {% endif %}
+
+    {% endfor %}
+
+    {% if data.has_next %}
+    <li class="page-item">
+      <a class="page-link" href="/tf?para={{para}}&page={{ data.next_page_number }}">Next</a>
+    </li>
+    {% else %}
+    <li class="page-item">
+      <a class="page-link" disabled>Next</a>
+    </li>
+    {% endif %}
+  </ul>
+    </nav>
+  {% endif %}
+</center>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
