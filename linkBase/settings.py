@@ -25,7 +25,7 @@ SECRET_KEY = 'xzsnih6gen(or^!0w^u+p=v5nd)k!6eq5_%qpr-(_@+hi$wgvb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ict24.herokuapp.com',''.ict24.tk','www.ict24.tk','127.0.0.1']
 
 
 # Application definition
@@ -51,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 AUTHENTICATION_BACKENDS = [
     'web.backend.EmailBackend',
@@ -130,7 +131,7 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR,'staticRoot')
+STATIC_ROOT = os.path.join(BASE_DIR,'staticRoot')
 
 MEDIA_URL = '/upload/'
 MEDIA_ROOT = os.path.join(BASE_DIR,"uploads")
