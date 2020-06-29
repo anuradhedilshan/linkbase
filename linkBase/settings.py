@@ -85,11 +85,11 @@ WSGI_APPLICATION = 'linkBase.wsgi.application'
 DATABASES = {
       'default': {
         'ENGINE': 'django.db.backends.mysql', 
-        'NAME': '8MoFKm6qcF',
-        'USER': '8MoFKm6qcF',
-        'PASSWORD': 'fmvMom4PI2',
-        'HOST': 'remotemysql.com',   
-        'PORT': '3306',
+        'NAME': 'anuradhe',
+        'USER': 'anuradhe@localhost',
+        'PASSWORD': 'Anuradha@5008',
+        'HOST': '127.0.0.1',   
+        
     }
 }
 
