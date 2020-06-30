@@ -84,12 +84,8 @@ WSGI_APPLICATION = 'linkBase.wsgi.application'
 
 DATABASES = {
       'default': {
-        'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'anuradhe',
-        'USER': 'anuradhe@localhost',
-        'PASSWORD': 'Anuradha@5008',
-        'HOST': 'www.db4free.net',   
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'yourdatabasename.db'),
     }
 }
 
